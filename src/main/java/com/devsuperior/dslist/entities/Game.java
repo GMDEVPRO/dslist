@@ -23,29 +23,40 @@ public class Game {
 	@Column(name = "game_year")
 	private Integer year;
 	private String genre;
-	private String platform;
-	private String ingUrl;
+	private String platforms;
+	private Double score;
+	private String imgUrl;
+	
+	@Column(length = 255)
 	private String shortDescription;
+	
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	
 	public Game() {
 		
 	}
+	
+	
 
 
-	public Game(Long id, String title, Integer year, String genre, String platform, String ingUrl,
+	public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 	
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.platform = platform;
-		this.ingUrl = ingUrl;
+		this.platforms = platforms;
+		this.score = score;
+		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
 	}
+
+
 
 
 	public Long getId() {
@@ -53,9 +64,13 @@ public class Game {
 	}
 
 
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+
 
 
 	public String getTitle() {
@@ -63,9 +78,13 @@ public class Game {
 	}
 
 
+
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+
 
 
 	public Integer getYear() {
@@ -73,9 +92,13 @@ public class Game {
 	}
 
 
+
+
 	public void setYear(Integer year) {
 		this.year = year;
 	}
+
+
 
 
 	public String getGenre() {
@@ -83,29 +106,57 @@ public class Game {
 	}
 
 
+
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
 
-	public String getPlatform() {
-		return platform;
+
+
+	public String getPlatforms() {
+		return platforms;
 	}
 
 
-	public void setPlatform(String platform) {
-		this.platform = platform;
+
+
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
+	}
+	
+	
+
+
+
+
+	public Double getScore() {
+		return score;
 	}
 
 
-	public String getIngUrl() {
-		return ingUrl;
+
+
+	public void setScore(Double score) {
+		this.score = score;
 	}
 
 
-	public void setIngUrl(String ingUrl) {
-		this.ingUrl = ingUrl;
+
+
+	public String getInmgUrl() {
+		return imgUrl;
 	}
+
+
+
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+
 
 
 	public String getShortDescription() {
@@ -113,9 +164,13 @@ public class Game {
 	}
 
 
+
+
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
+
+
 
 
 	public String getLongDescription() {
@@ -123,15 +178,21 @@ public class Game {
 	}
 
 
+
+
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
+
+
 
 
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
+
 
 
 	@Override
@@ -146,6 +207,8 @@ public class Game {
 		return Objects.equals(id, other.id);
 	}
 
+
+	
 
 	 
 
