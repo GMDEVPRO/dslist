@@ -20,15 +20,15 @@ public class GameService {
 	@Transactional(readOnly = true)
 	public GameDTO findById(Long Id) {
 		Game result = gameRepository.findById(Id).get();
-		GameDTO dto = new GameDTO(result);
-		return dto;
+		return  new GameDTO(result);
+		
 	}
 	
 	@Transactional(readOnly = true)
 	public List<GameMiniDTO> findAll() {
 		List<Game> result = gameRepository.findAll();
-		List<GameMiniDTO> dto = result.stream().map(x -> new GameMiniDTO(x)).toList();
-		return dto;
+		return result.stream().map(x -> new GameMiniDTO(x)).toList();
+		
 	}
 	
 

@@ -19,6 +19,7 @@ public class GameList {
 	private Long id;
 	private String name;
 	
+
 	
 	public GameList() {
 		
@@ -52,6 +53,9 @@ public class GameList {
 	}
 
 
+	
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -69,7 +73,8 @@ public class GameList {
 		GameList other = (GameList) obj;
 		return Objects.equals(id, other.id);
 	}
-	
+
+
 	
 	
 
